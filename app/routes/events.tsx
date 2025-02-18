@@ -1,19 +1,17 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/events";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "CY-MATHS-IN | Homepage" },
-    { name: "description", content: "Welcome to CY-MATHS-IN!" },
+    { title: "CY-MATHS-IN | Events" },
+    { name: "description", content: "Events" },
   ];
 }
 
-export default function Home() {
+export default function Events() {
   return (
     <main>
 
-      <h1>Homepage</h1>
-
-      <p>CY-MATHS-IN is a newly established national network of academics whose research lies in the broad field of mathematical sciences and are interested in collaborative projects with industry.</p>
+      <h1>Events</h1>
 
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
