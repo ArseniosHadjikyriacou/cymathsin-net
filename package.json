@@ -9,8 +9,11 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@portabletext/react": "^3.2.1",
     "@react-router/node": "^7.0.2",
     "@react-router/serve": "^7.0.2",
+    "@sanity/client": "^6.28.0",
+    "@sanity/image-url": "^1.1.0",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

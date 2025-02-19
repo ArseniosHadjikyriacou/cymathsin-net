@@ -61,12 +61,12 @@ const ThreeBars = styled(FaBars)`
 
 const NavLinkTxt = styled(NavLink)`
   color:rgb(155, 155, 155);
-  font-size: 2vw;
+  font-size: 2.2vw;
   font-weight: 600;
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 2vw;
+  padding: 0 2.2vw;
   height: 100%;
   cursor: pointer;
   transition: 150ms;
@@ -85,7 +85,7 @@ const NavLinkTxt = styled(NavLink)`
 const SidebarNav = styled.nav`
   background: white;
   border-left: 2px solid black;
-  width: 50vw;
+  width: 55vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -133,9 +133,9 @@ const SidebarLink = styled(NavLink)`
   align-items: center;
   padding: 2vh 4vw;
   list-style: none;
-  height: 4vh;
+  height: 3.5vh;
   text-decoration: none;
-  font-size: 4vh;
+  font-size: 3.5vh;
   font-weight: 600;
   transition: 150ms;
   &.active {
