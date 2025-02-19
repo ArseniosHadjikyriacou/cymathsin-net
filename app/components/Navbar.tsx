@@ -194,13 +194,13 @@ const SidebarUrlLink = styled.a`
 
 
 export default function Navbar() {
-  const [sidebar,setSitebar] = useState(false);
+  const [showSidebar,setShowSidebar] = useState(false);
 
   return (
     <>
       <Nav>
         
-        <NavLinkImg to="/" onClick={() => {setSitebar(false)}} >
+        <NavLinkImg to="/" onClick={() => {setShowSidebar(false)}} >
           <StyledLogo src={graph} alt="graph" />
           <StyledLogo src={logo} alt="logo" />
         </NavLinkImg>
@@ -220,38 +220,38 @@ export default function Navbar() {
           </NavLinkTxt>
         </NavMenu>
 
-        <ThreeBars onClick={() => {setSitebar(prev => !prev)}} />
+        <ThreeBars onClick={() => {setShowSidebar(prev => !prev)}} />
 
         
-        {sidebar &&
+        {showSidebar &&
           <SidebarNav>
           <SidebarWrap>
 
             <SidebarClose>
-              <CloseIconWrapper onClick={() => {setSitebar(prev => !prev)}}>
+              <CloseIconWrapper onClick={() => {setShowSidebar(prev => !prev)}}>
                 <CloseIcon />
               </CloseIconWrapper>
             </SidebarClose>
 
-            <SidebarLink to="/about" onClick={() => {setSitebar(prev => !prev)}} >
+            <SidebarLink to="/about" onClick={() => {setShowSidebar(prev => !prev)}} >
               <SidebarLabel>
                 About Us
               </SidebarLabel>
             </SidebarLink>
 
-            <SidebarLink to="/news" onClick={() => {setSitebar(prev => !prev)}} >
+            <SidebarLink to="/news" onClick={() => {setShowSidebar(prev => !prev)}} >
               <SidebarLabel>
                 News
               </SidebarLabel>
             </SidebarLink>
 
-            <SidebarLink to="/events" onClick={() => {setSitebar(prev => !prev)}} >
+            <SidebarLink to="/events" onClick={() => {setShowSidebar(prev => !prev)}} >
               <SidebarLabel>
                 Events
               </SidebarLabel>
             </SidebarLink>
 
-            <SidebarLink to="/contact" onClick={() => {setSitebar(prev => !prev)}} >
+            <SidebarLink to="/contact" onClick={() => {setShowSidebar(prev => !prev)}} >
               <SidebarLabel>
                 Contact Us
               </SidebarLabel>

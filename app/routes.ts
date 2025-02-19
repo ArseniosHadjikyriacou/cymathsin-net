@@ -10,8 +10,9 @@ export default [
     index("routes/home.tsx"),
     route("about","routes/about.tsx"),
     route("news","routes/news.tsx"),
-    route(":slug", "routes/post.tsx"),
+    route("news/:slug", "routes/newsPost.tsx"),
     route("events","routes/events.tsx"),
+    route("events/:slug", "routes/eventsPost.tsx"),
     route("contact","routes/contact.tsx"),
   ]),
 ] satisfies RouteConfig;

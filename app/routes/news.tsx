@@ -31,7 +31,7 @@ export default function News({ loaderData }: Route.ComponentProps) {
       <ul>
         {posts.map((post) => (
           <li key={post._id}>
-            <Link to={`/${post.slug.current}`}>
+            <Link to={`${post.slug.current}`}>
               <h3>{post.title}</h3>
             </Link>
             <p>{new Date(post.publishedAt).toLocaleDateString()}</p>

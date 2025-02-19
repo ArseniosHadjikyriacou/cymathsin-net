@@ -1,3 +1,6 @@
+import type { SanityDocument } from "@sanity/client";
+import { Link } from "react-router";
+import { client } from "../sanity/client";
 import type { Route } from "./+types/events";
 
 export function meta({}: Route.MetaArgs) {
@@ -7,12 +10,34 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
 
-export default function Events() {
+export async function loader() {
+  return { posts: await client.fetch<SanityDocument[]>(POSTS_QUERY) };
+}
+
+
+export default function Events({ loaderData }: Route.ComponentProps) {
+  const { posts } = loaderData;
+
   return (
     <main>
 
       <h1>Events</h1>
+
+      <ul>
+        {posts.map((post) => (
+          <li key={post._id}>
+            <Link to={`${post.slug.current}`}>
+              <h3>{post.title}</h3>
+            </Link>
+            <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+          </li>
+        ))}
+      </ul>
 
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 

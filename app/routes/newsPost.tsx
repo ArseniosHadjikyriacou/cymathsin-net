@@ -4,7 +4,7 @@ import type { SanityDocument } from "@sanity/client";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { PortableText } from "@portabletext/react";
 import { client } from "../sanity/client";
-import type { Route } from "./+types/post";
+import type { Route } from "./+types/newsPost";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -26,10 +26,10 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 
-export default function Post({ loaderData }: Route.ComponentProps) {
+export default function NewsPost({ loaderData }: Route.ComponentProps) {
   const { post } = loaderData;
-  const postImageUrl = post.image
-    ? urlFor(post.image)?.width(550).height(310).url()
+  const postImageUrl = post.mainImage
+    ? urlFor(post.mainImage)?.width(550).height(310).url()
     : null;
 
   return (
